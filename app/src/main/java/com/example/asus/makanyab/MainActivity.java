@@ -673,6 +673,7 @@ public class MainActivity extends AppCompatActivity
 //        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,contactFragment);
 
 
+        int a=0;
 
     }
 
