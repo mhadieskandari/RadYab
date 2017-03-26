@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fullversion"
+            android:icon="@drawable/ic_menu_fullversion"
+            android:title="@string/fullversion" />
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_person"
+            android:title="@string/contact_list" />
+        <item
+            android:id="@+id/nav_location_requests"
+            android:icon="@drawable/ic_menu_location_on_black_24dp"
+            android:title="@string/location_request" />
+        <!--<item-->
+            <!--android:id="@+id/nav_slideshow"-->
+            <!--android:icon="@drawable/ic_menu_slideshow"-->
+            <!--android:title="Slideshow" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_manage"-->
+            <!--android:icon="@drawable/ic_menu_manage"-->
+            <!--android:title="Tools" />-->
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/setting" />
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/ic_menu_update"
+            android:title="@string/update" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_help"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_menu_exit"
+            android:title="@string/exit" />
+    </group>
+
+    <item android:title="@string/communicate"
+        android:checked="false">
+        <menu>
+            <item
+                android:id="@+id/nav_channel_telegram"
+                android:icon="@drawable/ic_menu_telegram"
+                android:title="@string/channel_telegram" />
+            <item
+                android:id="@+id/nav_contactus"
+                android:icon="@drawable/ic_menu_about_us"
+                android:title="@string/contactus" />
+            <item
+                android:id="@+id/nav_vote"
+                android:icon="@drawable/ic_menu_vote"
+                android:title="@string/vote" />
+            <item
+                android:id="@+id/nav_another_apps"
+                android:icon="@drawable/ic_menu_another_appa"
+                android:title="@string/another_app" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,126 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.makanyab.AboutFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/AboutRecycler">
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+    <!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:paddingRight="30dp"-->
+            <!--android:paddingLeft="30dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_weight="1"-->
+
+                <!--android:textStyle="normal|bold"-->
+                <!--android:text="Hadi Eskandari" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_menu_person"-->
+                <!--android:id="@+id/imageView2" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:paddingRight="30dp"-->
+            <!--android:paddingLeft="30dp">-->
+
+            <!--<TextView-->
+                <!--android:text="09353364377"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/tvPhoneNumber"-->
+                <!--android:layout_weight="1"-->
+
+                <!--android:textStyle="normal|bold|italic" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_menu_about_us"-->
+                <!--android:id="@+id/imgCall" />-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:paddingRight="30dp"-->
+            <!--android:paddingLeft="30dp">-->
+
+            <!--<TextView-->
+                <!--android:text="hadi.eskandari@ymail.com"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/tvEmail"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textStyle="normal|bold|italic" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_email"-->
+                <!--android:id="@+id/imgEmail" />-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="30dp"-->
+            <!--android:paddingRight="30dp"-->
+            <!--android:paddingLeft="30dp">-->
+
+
+
+            <!--<TextView-->
+                <!--android:text="https://www.linkedin.com/in/hadi-eskandari-62291985/"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/tvLinkedIn"-->
+                <!--android:textStyle="normal|bold"-->
+                <!--android:layout_weight="1" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_linkedin"-->
+                <!--android:id="@+id/imgLinkedIn" />-->
+
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+</FrameLayout>

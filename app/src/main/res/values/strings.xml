@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">ردیاب گلبرگ</string>
+
+    <string name="navigation_drawer_open">باز کردن منو</string>
+    <string name="navigation_drawer_close">بستن منو</string>
+
+    <string name="action_help">راهنما</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Save">ذخیره</string>
+    <string name="Saved">ذخیره شد</string>
+    <string name="imgDes">عکس پروفایل</string>
+    <string name="contactname">نام</string>
+    <string name="contactfamily">نام خانوادگی</string>
+    <string name="phonenumber">شماره تلفن</string>
+    <string name="ok">تایید</string>
+    <string name="cancel">انصراف</string>
+    <string name="state">وضعیت</string>
+    <string name="altitude">ارتفاع جغرافیایی</string>
+    <string name="latitude">عرض جغرافیایی</string>
+    <string name="longitude">طول جغرافیایی</string>
+    <string name="request">درخواست</string>
+    <string name="tap_profile">پروفایل</string>
+    <string name="hidden_app">پنهان شدن برنامه</string>
+    <string name="tap_security">امنیت</string>
+    <string name="saved">ذخیره شد</string>
+    <string name="old_password">رمز عبور قبلی</string>
+    <string name="new_password">رمز عبور جدید</string>
+    <string name="edit">ویرایش</string>
+    <string name="tap_Hidden">مخفی کردن برنامه</string>
+    <string name="msg_install_googlemaps">لطفا برنامه نقشه گوگل را نصب کنید.</string>
+    <string name="msg_luncher_hide">ایکون برنامه پنهان شد</string>
+    <string name="msg_luncher_show">آیکون برنامه نمایان شد</string>
+    <string name="msg_email_app_isnotinstalled">برنامه ای برای ارسال ایمیل نصب نیست</string>
+    <string name="author_name">برنامه نویس</string>
+    <string name="title_activity_login">Sign in</string>
+
+
+    <string name="location_list">لیست مکان یابی ها</string>
+    <string name="programmer">Hadi Eskandari</string>
+    <string name="create_password">ایجاد رمز عبور</string>
+    <string name="msg_pass_repass_is_not_match">رمز و تکرار مشابه نیستند</string>
+    <string name="msg_pass_repass_could_not_empty">رمز و تکرار آن نباید خالی باشند</string>
+    <string name="msg_create_password_surly">حتما باید در اولین ورود رمز عبور ایجاد کنید</string>
+    <string name="password">رمزعبور</string>
+    <string name="re_password">تکرار رمز عبور</string>
+    <string name="location_profile">مشخصات شما</string>
+    <string name="location_security">امنیت</string>
+    <string name="location_help">راهنما</string>
+    <string name="location_contact_list">لیست مخاطبان مکان یابی</string>
+    <string name="location_contact_us">تماس با ما</string>
+    <string name="msg_old_pass_required">رمز عبور قبلی باید وارد شود</string>
+    <string name="msg_new_pass_required">رمز جدید نمی تواند خالی باشد</string>
+    <string name="help">راهنما</string>
+    <string name="setting">تنظیمات</string>
+    <string name="location_request">لیست مکانیابی ها</string>
+    <string name="contact_list">لیست اعضا</string>
+    <string name="contactus">تماس با ما</string>
+    <string name="communicate">ارتباطات</string>
+    <string name="msg_name_phone_could_not_empty">نام و شماره تلفن نمی تواند خالی باشد</string>
+    <string name="msg_create_owner_surly">نام و شماره تلفن شما حتما باید صحیح وارد شود</string>
+    <string name="msg_more_than_one_user_upgrade_to_full_version">برای ثبت بیش از یک شماره لطفا به نسخه کامل ارتقاء دهید</string>
+    <string name="msg_more_than_twoenty_location_upgrade_to_full_version">برای مکانیابی بیش از 20 شماره لطفا به نسخه کامل ارتقاء دهید</string>
+    <string name="msg_is_exist_user">این شماره از قبل وجود دارد</string>
+    <string name="owner_name">نام و نام خانوادگی شما</string>
+    <string name="owner_phone">شماره تلفن همراه شما</string>
+    <string name="fullversion">ارتقا به نسخه کامل</string>
+    <string name="msg_isPremium">قبلا نسخه کامل خریداری شده باتشکر از شما</string>
+    <string name="vote">نظر به برنامه در بازار</string>
+    <string name="update">بروزرسانی برنامه</string>
+    <string name="another_app">دیگر برنامه های ما</string>
+    <string name="app_menu">منوی برنامه</string>
+    <string name="last_updated">برنامه شما اخرین نسخه موجود می باشد</string>
+    <string name="exit">خروج از برنامه</string>
+    <string name="msg_cannot_delete_locationrequest">امکان حذف درخواست فقط برای نسخه کامل امکان دارد</string>
+    <string name="msg_bazar_is_not_installed">لطفا برنامه بازار را نصب کنید و وارد حساب خود شوید</string>
+    <string name="msg_send_registration_request">ارسال درخواست تایید به مخاطب</string>
+    <string name="msg_send_registration_accept">ارسال تایید درخواست مخاطب</string>
+    <string name="msg_sms_send_failed">خطا در ارسال پیامک</string>
+    <string name="share_with_telegram">اشتراک گذاری در تلگرام</string>
+    <string name="share_telegram">اشتراک گذاری در تلگرام</string>
+    <string name="channel_telegram">کانال تلگرام</string>
+    <string name="msg_telegram_is_not_installed">برنامه تلگرام نصب نیست</string>
+    <string name="turnon_gps">روشن کردن gps</string>
+    <string name="gps_must_be_turn_on">برای استفاده از این برنامه gps باید روشن باشد</string>
+    <string name="msg_turn_on_gps">gps باید روشن باشد</string>
+</resources>

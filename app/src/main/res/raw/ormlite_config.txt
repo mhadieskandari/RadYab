@@ -1,0 +1,78 @@
+#
+# generated on 2017/03/21 07:38:49
+#
+# --table-start--
+dataClass=com.example.asus.makanyab.models.Contact
+tableName=Contacts
+# --table-fields-start--
+# --field-start--
+fieldName=ContactID
+generatedId=true
+indexName=Contacts_ContactID_idx
+# --field-end--
+# --field-start--
+fieldName=ContactName
+# --field-end--
+# --field-start--
+fieldName=PhoneNumber
+# --field-end--
+# --field-start--
+fieldName=State
+# --field-end--
+# --field-start--
+fieldName=IsMonitor
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.example.asus.makanyab.models.Location
+tableName=Locations
+# --table-fields-start--
+# --field-start--
+fieldName=LocationID
+generatedId=true
+indexName=Locations_LocationID_idx
+# --field-end--
+# --field-start--
+fieldName=ContactID
+columnName=ContactID
+canBeNull=false
+foreign=true
+foreignAutoRefresh=true
+maxForeignAutoRefreshLevel=3
+# --field-end--
+# --field-start--
+fieldName=Latitude
+# --field-end--
+# --field-start--
+fieldName=Longitude
+# --field-end--
+# --field-start--
+fieldName=dateTime
+# --field-end--
+# --field-start--
+fieldName=Altitude
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.example.asus.makanyab.models.Setting
+tableName=Settings
+# --table-fields-start--
+# --field-start--
+fieldName=SettingID
+generatedId=true
+indexName=Settings_SettingID_idx
+# --field-end--
+# --field-start--
+fieldName=Setting_Name
+unique=true
+# --field-end--
+# --field-start--
+fieldName=Setting_Val
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
