@@ -13,10 +13,10 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -35,7 +35,6 @@ import android.widget.Toast;
 
 import com.example.asus.makanyab.db.MakanYabDataBase;
 import com.example.asus.makanyab.models.Setting;
-
 import com.example.asus.makanyab.util.IabHelper;
 import com.example.asus.makanyab.util.IabResult;
 import com.example.asus.makanyab.util.Inventory;
@@ -46,6 +45,10 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import java.sql.SQLException;
 import java.util.List;
 
+//// TODO: 11/5/2017 check simcart changes
+//String imei = android.os.SystemProperties.get(android.telephony.TelephonyProperties.PROPERTY_IMSI);
+//with permission
+//android.permission.READ_PHONE_STATE
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,SettingFragment.OnFragmentInteractionListener ,ContactFragment.OnFragmentInteractionListener,LocationFragment.OnFragmentInteractionListener{
@@ -79,9 +82,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-//        startService(new Intent(getBaseContext(), MainService.class));
+
         turnOnGPS();
         dataBase = getHelper();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -172,6 +174,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+//    @Override
+//    protected void attachBaseContext(Context newBase) {
+//        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+//    }
 
     public void turnOnGPS(){
 
@@ -673,7 +679,6 @@ public class MainActivity extends AppCompatActivity
 //        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,contactFragment);
 
 
-        int a=0;
 
     }
 
