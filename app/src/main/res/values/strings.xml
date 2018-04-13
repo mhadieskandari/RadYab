@@ -85,4 +85,6 @@
     <string name="turnon_gps">روشن کردن gps</string>
     <string name="gps_must_be_turn_on">برای استفاده از این برنامه gps باید روشن باشد</string>
     <string name="msg_turn_on_gps">gps باید روشن باشد</string>
+    <string name="FirstName">نام</string>
+    <string name="LastName">نام خانوادگی</string>
 </resources>

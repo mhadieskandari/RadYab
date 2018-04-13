@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -41,6 +43,8 @@ import com.example.asus.makanyab.util.Inventory;
 import com.example.asus.makanyab.util.Purchase;
 import com.farsitel.bazaar.IUpdateCheckService;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.norbsoft.typefacehelper.TypefaceCollection;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -49,6 +53,9 @@ import java.util.List;
 //String imei = android.os.SystemProperties.get(android.telephony.TelephonyProperties.PROPERTY_IMSI);
 //with permission
 //android.permission.READ_PHONE_STATE
+
+
+//// TODO: 11/15/2017  add font to whole of app
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,SettingFragment.OnFragmentInteractionListener ,ContactFragment.OnFragmentInteractionListener,LocationFragment.OnFragmentInteractionListener{
@@ -83,6 +90,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TypefaceCollection typeface = new TypefaceCollection.Builder()
+                .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/Yekan.ttf"))
+                .create();
+        TypefaceHelper.init(typeface);
+        TypefaceHelper.typeface(this);
+
 
         turnOnGPS();
         dataBase = getHelper();
@@ -165,15 +179,20 @@ public class MainActivity extends AppCompatActivity
 
 
 
+        //432118200971278
+        //432350398229387
 
 
-
-
-
-
+//        TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//        String imsi = mTelephonyMgr.getSubscriberId();
+//        Log.d("imsi",getMyPhoneNO());
 
     }
-
+    private String getMyPhoneNO() {
+        TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
+        return mPhoneNumber;
+    }
 //    @Override
 //    protected void attachBaseContext(Context newBase) {
 //        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));

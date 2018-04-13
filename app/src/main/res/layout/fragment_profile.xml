@@ -8,40 +8,42 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:padding="30dp"
+        tools:ignore="UselessParent">
 
         <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/etMyName"
-            android:inputType="text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:hint="نام"
+            android:layout_alignParentTop="true"
             android:layout_marginTop="30dp"
-            android:textColorHint="#ffff007a" />
+            android:hint="@string/FirstName"
+            android:inputType="text"
+            android:textColorHint="@color/colorPrimaryDark" />
 
 
         <EditText
+            android:id="@+id/etMyNumber"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etMyNumber"
-            android:inputType="phone"
-            android:hint="شماره همراه"
-            android:textColorHint="#ffff007a"
-            android:layout_below="@+id/etMyName"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_below="@+id/etMyName"
+            android:hint="@string/LastName"
+            android:inputType="phone"
+            android:textColorHint="@color/colorPrimaryDark" />
 
         <Button
+            android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Save"
-            android:id="@+id/btnSave"
             android:layout_below="@+id/etMyNumber"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:text="@string/Save" />
 
     </RelativeLayout>
 </FrameLayout>
