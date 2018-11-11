@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "42818927166",
+    "firebase_url": "https://radyabgolbarg.firebaseio.com",
+    "project_id": "radyabgolbarg",
+    "storage_bucket": "radyabgolbarg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42818927166:android:1bba84ada67b6a9a",
+        "android_client_info": {
+          "package_name": "com.example.asus.makanyab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42818927166-5hd39s2l426dphkgdosctc472jp9lgup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGNpIwCZkkfp6EvY7fvmkmNeikGxSejAA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
