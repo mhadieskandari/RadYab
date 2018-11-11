@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MakanYab.iml" filepath="$PROJECT_DIR$/MakanYab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RadYab.iml" filepath="$PROJECT_DIR$/RadYab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
