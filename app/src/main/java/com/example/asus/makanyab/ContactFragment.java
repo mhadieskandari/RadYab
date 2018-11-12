@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.asus.makanyab.Adapter.ContactRecyclerAdapter;
 import com.example.asus.makanyab.db.MakanYabDataBase;
 import com.example.asus.makanyab.models.Contact;
@@ -30,6 +31,10 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import java.sql.SQLException;
 import java.util.List;
 
+import io.fabric.sdk.android.Fabric;
+
+import io.fabric.sdk.android.Fabric;
+import com.crashlytics.android.Crashlytics;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,6 +86,8 @@ public class ContactFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Fabric.with(this.getContext(), new Crashlytics());
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -88,6 +95,8 @@ public class ContactFragment extends Fragment {
         }
 
         getActivity().setTitle(getResources().getString(R.string.location_contact_list));
+        throw new RuntimeException("This is a crash1");
+
     }
 
     private MakanYabDataBase getHelper() {

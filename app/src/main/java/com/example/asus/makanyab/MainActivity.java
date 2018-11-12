@@ -42,12 +42,16 @@ import com.example.asus.makanyab.util.IabResult;
 import com.example.asus.makanyab.util.Inventory;
 import com.example.asus.makanyab.util.Purchase;
 import com.farsitel.bazaar.IUpdateCheckService;
+import com.google.firebase.crash.FirebaseCrash;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.norbsoft.typefacehelper.TypefaceCollection;
 import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import io.fabric.sdk.android.Fabric;
+import com.crashlytics.android.Crashlytics;
 
 //// TODO: 11/5/2017 check simcart changes
 //String imei = android.os.SystemProperties.get(android.telephony.TelephonyProperties.PROPERTY_IMSI);
@@ -88,59 +92,70 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        TypefaceCollection typeface = new TypefaceCollection.Builder()
-                .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/Yekan.ttf"))
-                .create();
-        TypefaceHelper.init(typeface);
-        TypefaceHelper.typeface(this);
+            super.onCreate(savedInstanceState);
+            Fabric.with(this, new Crashlytics());
+            setContentView(R.layout.activity_main);
 
-
-        turnOnGPS();
-        dataBase = getHelper();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+            TypefaceCollection typeface = new TypefaceCollection.Builder()
+                    .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(), "fonts/Yekan.ttf"))
+                    .create();
+            TypefaceHelper.init(typeface);
+            TypefaceHelper.typeface(this);
 
 
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-        drawer.setDrawerListener(toggle);
+            turnOnGPS();
+            dataBase = getHelper();
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
 
 
-        toggle.syncState();
+            final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+            drawer.setDrawerListener(toggle);
 
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            toggle.syncState();
 
-            @Override
-            public void onClick(View v) {
-                if (drawer.isDrawerOpen(Gravity.RIGHT)) {
-                    drawer.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawer.openDrawer(Gravity.RIGHT);
+
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (drawer.isDrawerOpen(Gravity.RIGHT)) {
+                        drawer.closeDrawer(Gravity.RIGHT);
+                    } else {
+                        drawer.openDrawer(Gravity.RIGHT);
+                    }
                 }
+            });
+
+            navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+            navigationView.setNavigationItemSelectedListener(this);
+
+
+            List<Setting> prem = null;
+            try {
+                prem = dataBase.getSettingDao().queryForEq(Setting.Field_Setting_Name, Setting.Field_Setting_IsPremium);
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        });
+            if (prem.size() == 1) {
+                if (prem.get(0).getSetting_Val().equals("1")) {
+                    mIsPremium = true;
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+                } else {
+                    try {
+                        getBazarCheck();
+                    } catch (Exception e) {
+                        Toast.makeText(this, getResources().getString(R.string.msg_bazar_is_not_installed), Toast.LENGTH_LONG).show();
+                    }
 
-        navigationView.setNavigationItemSelectedListener(this);
-
-
-        List<Setting> prem = null;
-        try {
-            prem = dataBase.getSettingDao().queryForEq(Setting.Field_Setting_Name, Setting.Field_Setting_IsPremium);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        if (prem.size() == 1) {
-            if (prem.get(0).getSetting_Val().equals("1")) {
-                mIsPremium = true;
+                }
 
             } else {
                 try {
@@ -148,45 +163,35 @@ public class MainActivity extends AppCompatActivity
                 } catch (Exception e) {
                     Toast.makeText(this, getResources().getString(R.string.msg_bazar_is_not_installed), Toast.LENGTH_LONG).show();
                 }
-
             }
 
-        } else {
-            try {
-                getBazarCheck();
-            } catch (Exception e) {
-                Toast.makeText(this, getResources().getString(R.string.msg_bazar_is_not_installed), Toast.LENGTH_LONG).show();
+            MenuItem m = navigationView.getMenu().findItem(R.id.nav_fullversion);
+            if (mIsPremium) {
+                m.setVisible(false);
+
+            } else {
+                m.setVisible(true);
             }
-        }
-
-        MenuItem m = navigationView.getMenu().findItem(R.id.nav_fullversion);
-        if (mIsPremium) {
-            m.setVisible(false);
-
-        } else {
-            m.setVisible(true);
-        }
 
 
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.CALL_PHONE, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.READ_SMS},
-                    1);
-        }
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.CALL_PHONE, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.READ_SMS},
+                        1);
+            }
 
 
 
 
 
 
-        //432118200971278
-        //432350398229387
+            //432118200971278
+            //432350398229387
 
 
 //        TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 //        String imsi = mTelephonyMgr.getSubscriberId();
 //        Log.d("imsi",getMyPhoneNO());
-
     }
     private String getMyPhoneNO() {
         TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);

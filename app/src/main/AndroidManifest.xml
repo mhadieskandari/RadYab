@@ -45,7 +45,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3d2c3e1cee2066dacd1589d8ea263607d2088e0f"
+            />
         <service
             android:name=".MainService"
             android:enabled="true"
