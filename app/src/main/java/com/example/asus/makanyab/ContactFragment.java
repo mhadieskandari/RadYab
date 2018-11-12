@@ -95,8 +95,6 @@ public class ContactFragment extends Fragment {
         }
 
         getActivity().setTitle(getResources().getString(R.string.location_contact_list));
-        throw new RuntimeException("This is a crash1");
-
     }
 
     private MakanYabDataBase getHelper() {
